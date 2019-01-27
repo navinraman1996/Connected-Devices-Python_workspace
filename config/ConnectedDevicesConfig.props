@@ -13,13 +13,13 @@ certFile       = /home/motion/config/ubidots_cert.pem
 configPath     = /home/motion/config
 
 [smtp.cloud]
-host           = Not Set
+host           = smtp.gmail.com
 port           = 465
-fromAddr       = Not Set
-toAddr         = Not Set
+fromAddr       = navinraman.iot@gmail.com
+toAddr         = navinraman.iot@gmail.com
 toMediaAddr    = Not Set
 toTxtAddr      = Not Set
-authToken      = Not Set
+authToken      = Connected_devices
 enableAuth     = True
 enableCrypt    = True
 
@@ -75,5 +75,5 @@ cloudSvcType   = UBIDOTS
 
 [device]
 enableEmulator = True
-pollCycleSecs  = 60
+pollCycleSecs  = 10
 nominalTemp    = 20
