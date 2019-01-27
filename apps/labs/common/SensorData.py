@@ -54,19 +54,27 @@ class SensorData(object):
         if (self.totVal != 0 and self.sampleCount > 0):
             self.avgVal = self.totVal / self.sampleCount
     
-    #returns the average value of the reading
+    '''
+    @return: the average value of the reading
+    '''
     def getAvgValue(self):
         return self.avgVal
     
-    #returns the maximum value of the reading
+    '''
+    @return: the maximum value of the reading
+    '''
     def getMaxValue(self):
         return self.maxVal
     
-    #returns the minimum value of the reading
+    '''
+    @return: the minimum value of the reading
+    '''
     def getMinValue(self):
         return self.minVal
     
-    #returns the current value of the reading
+    '''
+    @return: the current value of the reading
+    '''
     def getValue(self):
         return self.curVal
     
@@ -83,8 +91,8 @@ class SensorData(object):
         str(self.name + ':' + \
         os.linesep + '\tTime: ' + self.timeStamp + \
         os.linesep + '\tSample number: ' + str(self.sampleCount) + \
-        os.linesep + '\tCurrent Temperature value is: ' + str(self.curVal) + \
-        os.linesep + '\tAverage Temperature: ' + str(self.avgVal) + \
-        os.linesep + '\tMinimum Temperature: ' + str(self.minVal) + \
-        os.linesep + '\tMaximum Temperature: ' + str(self.maxVal) + '\n')
+        os.linesep + '\tCurrent Temperature value is: ' + str(self.curVal) + chr(176) +'C' +  \
+        os.linesep + '\tAverage Temperature: ' + str(self.avgVal) + chr(176) +'C' + \
+        os.linesep + '\tMinimum Temperature: ' + str(self.minVal) + chr(176) +'C' + \
+        os.linesep + '\tMaximum Temperature: ' + str(self.maxVal) + chr(176) +'C' + '\n')
         return self.customStr

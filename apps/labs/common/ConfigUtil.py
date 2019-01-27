@@ -8,6 +8,10 @@ import configparser
 import os
 DEFAULT_CONFIG_FILE = "../data/ConnectedDevicesConfig.props"
 
+'''
+A simple utility wrapper around the built-in Python
+configuration infrastructure.
+'''
 class ConfigUtil:
     '''
     classdocs

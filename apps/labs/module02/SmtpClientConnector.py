@@ -36,6 +36,10 @@ class SmtpClientConnector(object):
         fromAddr    = self.config.getProperty(ConfigConst.ConfigConst.SMTP_CLOUD_SECTION, ConfigConst.ConfigConst.FROM_ADDRESS_KEY)
         toAddr      = self.config.getProperty(ConfigConst.ConfigConst.SMTP_CLOUD_SECTION, ConfigConst.ConfigConst.TO_ADDRESS_KEY)
         authToken   = self.config.getProperty(ConfigConst.ConfigConst.SMTP_CLOUD_SECTION, ConfigConst.ConfigConst.USER_AUTH_TOKEN_KEY)
+        '''
+        assigning the values host and port key, from and to address and
+        the user authorization key from ConfigConst
+        '''
         
         msg = MIMEMultipart() #contains a list of more than one message
         msg['From'] = fromAddr
@@ -49,6 +53,7 @@ class SmtpClientConnector(object):
         # send e-mail notification
         try:  
             smtpServer = smtplib.SMTP_SSL(host, port)
+            #An SMTP instance encapsulates an SMTP connection
             smtpServer.ehlo()
             smtpServer.login(fromAddr, authToken)
             smtpServer.sendmail(fromAddr, toAddr, msgText)
