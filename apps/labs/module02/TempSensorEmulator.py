@@ -30,30 +30,30 @@ class TempSensorEmulator(Thread):
     def run(self):
         while True:
             
+            '''
+                Enabling the Emulator and generates the current value provided within the range
+                and printing the sensor data.
+                '''
             if self.enableEmulator:
                 self.sensor.curVal = uniform(float(self.sensor.getMinValue()), float(self.sensor.getMaxValue()))
                 self.sensor.addValue(self.sensor.curVal)
                 print(self.sensor)
                 
-                '''
-                Enabling the Emulator and generates the current value provided within the range
-                and printing the sensor data.
-                '''
+            '''
+                Alert Notification will be sent if the current value exceeds the threshold value
+                which is the addition of the average value and 10
+                '''     
             if self.sensor.curVal >= (self.sensor.getAvgValue() + 10):
                 data = (self.sensor)
                 print(data)
                 print("Warning: Temperature has been surpassed")
                 
-                '''
-                Alert Notification will be sent if the current value exceeds the threshold value
-                which is the addition of the average value and 10
-                ''' 
+                
                 sensor_notification = SmtpClientConnector.SmtpClientConnector()
                 sensor_notification.publishMessage("Temperature Alert Notification", data)
-                
-            delay = int(self.temp_delay.getProperty(ConfigConst.ConfigConst.CONSTRAINED_DEVICE, ConfigConst.ConfigConst.POLL_CYCLES_KEY))     
-            sleep(delay)
             
             '''
             providing a delay for every sensor readings
-            '''
+            '''    
+            delay = int(self.temp_delay.getProperty(ConfigConst.ConfigConst.CONSTRAINED_DEVICE, ConfigConst.ConfigConst.POLL_CYCLES_KEY))     
+            sleep(delay)

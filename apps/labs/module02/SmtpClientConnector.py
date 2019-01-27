@@ -41,7 +41,8 @@ class SmtpClientConnector(object):
         the user authorization key from ConfigConst
         '''
         
-        msg = MIMEMultipart() #contains a list of more than one message
+        msg = MIMEMultipart() 
+        #contains a list of more than one message
         msg['From'] = fromAddr
         msg['To'] = toAddr
         msg['Subject'] = topic
