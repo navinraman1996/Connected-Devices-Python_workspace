@@ -11,6 +11,7 @@
  SOFTWARE.
 '''
 from random import uniform
+from _ast import Param
 
 class SenseHat():
     rotateDeg = 270
@@ -23,28 +24,50 @@ class SenseHat():
         self.clearFlag = True
 
     def get_humidity(self):
-        # NOTE: This is just a sample
-        return round(uniform(30.0, 40.0), 2)
+        return self.sense.get_humidity()
+        '''
+        NOTE: Below is the sample value, if the sense Hat is not used
+        return 48.5
+        '''
     
     def get_temperature(self):
         return self.get_temperature_from_humidity()
     
     def get_temperature_from_humidity(self):
-        # NOTE: This is just a sample
-        return round(uniform(18.0, 25.0), 2)
-    
+        return self.sense.get_temperature_from_humidity()
+        '''
+        NOTE: Below is the sample value, if the sense Hat is not used
+        return 21.4
+        '''
+        
     def get_temperature_from_pressure(self):
         return self.get_temperature_from_humidity()
     
     def get_pressure(self):
-        # NOTE: This is just a sample
-        return round(uniform(1020.0, 1035.0), 2)
-            
+        return self.sense.get_pressure()
+        '''
+        NOTE: Below is the sample value, if the sense Hat is not used
+        return 31.5
+        '''
+        
     def set_rotation(self, rotateDeg):
         self.rotateDeg = rotateDeg
+    '''
+    This function is used for setting the orientation of the text to be shown
+    on the Sense Hat LED, by rotating the degree of it(rotateDeg)
     
+    @param rotateDeg: A value which is used for the orientation of the text
+    '''
+        
     def show_letter(self, val):
         print(val)
-    
+    '''
+    @param val: The letter which is to be shown
+    '''
+        
     def show_message(self, msg):
         print(msg)
+    '''
+    @param val: The message which is to be shown
+    '''
+    

@@ -3,6 +3,7 @@ Created on Jan 24, 2019
 
 @author: Navin Raman
 '''
+from labbenchstudios.common.ConfigConst import NOMINAL_TEMP, KEEP_ALIVE_KEY
 
 class ConfigConst(object):
     '''
@@ -52,3 +53,7 @@ class ConfigConst(object):
     ENABLE_EMULATOR_KEY         = 'enableEmulator'
     ENABLE_LOGGING_KEY          = 'enableLogging'
     POLL_CYCLES_KEY             = 'pollCycleSecs'
+    
+    KEEP_ALIVE_KEY              = 'keepAlive'
+    
+    NOMINAL_TEMP                = 'nominalTemp'

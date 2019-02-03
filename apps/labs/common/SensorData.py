@@ -9,90 +9,82 @@ import os
 
 class SensorData(object):
     '''
-    classdocs
+    this class contains sensor data's and attributes
     '''
-    timestamp = None
-    name = 'not set'
-    curVal = 0;
-    avgVal = 0;
-    minVal = 0;
-    maxVal = 30;
-    totVal = 0;
-    sampleCount = 0;
+    timestamp           = None
+    name                = 'not set'
+    curVal              = 0;
+    avgVal              = 0;
+    minVal              = 0;
+    maxVal              = 25;
+    totVal              = 0;
+    diffVal             = 0;
+    sampleCount         = 0;
+    #to store the updated data in the local SensorData
+    surpassed_values    = list();
     
     '''
-    Constructor used to create an object of SensorData class
-    
-    @param name: Name of the sensor
-    @param minVal: Minimum temperature value of the sensor
-    @param maxVal: Maximum temperature value of the sensor     
+    Constructor to create object of SensorData Class
+   
+    @param name: Sensor name
+    @param minVal: Minimum allowed value of the sensor
+    @param maxVal: Maximum allowed value of the sensor  
     '''
-    def __init__(self, name,minVal,maxVal):
-        self.timestamp = str(datetime.now())
-        self.name = name
-        self.maxVal = maxVal
-        self.minVal = minVal
-    
+    def __init__(self, name, minVal, maxVal):
+        '''
+        Constructor
+        '''
+        self.timestamp  = str(datetime.now());
+        self.name       = name;
+        self.maxVal     = maxVal;
+        self.minVal     = minVal;
+        
     '''
-    This addValue function is used to calculate the average temperature value
-    by adding the current value with the previous current value and dividing
-    
-    @param newVal: This is the new sensor value for the recent reading 
+    AddValue function is used to add value to previous total and calculate avg
+   
+    @param newVal: new Sensor value 
     '''
-    def addValue(self,newVal):
+    def addValue(self, newVal):
         self.sampleCount += 1
-        self.timeStamp = str(datetime.now())
-        self.curVal = newVal
-        self.totVal += newVal
+        
+        self.timeStamp  = str(datetime.now())
+        self.curVal     = newVal
+        self.totVal    += newVal
         
         if (self.curVal < self.minVal):
             self.minVal = self.curVal
-            
+        
         if (self.curVal > self.maxVal):
             self.maxVal = self.curVal
-            
+        
         if (self.totVal != 0 and self.sampleCount > 0):
             self.avgVal = self.totVal / self.sampleCount
-    
-    '''
-    @return: the average value of the reading
-    '''
-    def getAvgValue(self):
+
+    def getAvgValue(self): # returns the average value
         return self.avgVal
     
-    '''
-    @return: the maximum value of the reading
-    '''
-    def getMaxValue(self):
+    def getMaxValue(self):# returns the maximum value
         return self.maxVal
     
-    '''
-    @return: the minimum value of the reading
-    '''
-    def getMinValue(self):
+    def getMinValue(self):# returns the minimum value
         return self.minVal
     
-    '''
-    @return: the current value of the reading
-    '''
-    def getValue(self):
+    def getValue(self):# returns the current value
         return self.curVal
     
-    def setName(self, name):
-        self.name = name
-    
     '''
-    An object in human readable format which is returned by this toString function
-    
-    @return: Human readable format object to print in the console 
-    '''
+    ToString function returns object in human readable format
+   
+    @return: Object in human readable customized format
+    ''' 
     def __str__(self):
         self.customStr = \
-        str(self.name + ':' + \
-        os.linesep + '\tTime: ' + self.timeStamp + \
-        os.linesep + '\tSample number: ' + str(self.sampleCount) + \
-        os.linesep + '\tCurrent Temperature value is: ' + str(self.curVal) + chr(176) +'C' +  \
-        os.linesep + '\tAverage Temperature: ' + str(self.avgVal) + chr(176) +'C' + \
-        os.linesep + '\tMinimum Temperature: ' + str(self.minVal) + chr(176) +'C' + \
-        os.linesep + '\tMaximum Temperature: ' + str(self.maxVal) + chr(176) +'C' + '\n')
+            str(self.name + ':' + \
+            os.linesep + '\tTime: '                         + self.timeStamp + \
+            os.linesep + '\tSample number: '                + str(self.sampleCount) + \
+            os.linesep + '\tCurrent Temperature value is: ' + str(self.curVal) + chr(176) +'C' + \
+            os.linesep + '\tAverage Temperature: '          + str(self.avgVal) + chr(176) +'C' + \
+            os.linesep + '\tMinimum Temperature: '          + str(self.minVal) + chr(176) +'C' + \
+            os.linesep + '\tMaximum Temperature: '          + str(self.maxVal) + chr(176) +'C' + '\n')
+            
         return self.customStr
