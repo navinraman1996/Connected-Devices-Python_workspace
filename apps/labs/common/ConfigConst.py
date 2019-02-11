@@ -3,7 +3,6 @@ Created on Jan 24, 2019
 
 @author: Navin Raman
 '''
-from labbenchstudios.common.ConfigConst import NOMINAL_TEMP, KEEP_ALIVE_KEY
 
 class ConfigConst(object):
     '''
