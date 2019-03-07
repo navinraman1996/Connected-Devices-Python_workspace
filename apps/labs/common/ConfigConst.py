@@ -10,7 +10,7 @@ class ConfigConst(object):
     '''
     SECTION_SEPARATOR           = '.'
     
-    DEFAULT_CONFIG_FILE_NAME    = '../../../data/ConnectedDevicesConfig.props'
+    DEFAULT_CONFIG_FILE_NAME    = '../../../config/ConnectedDevicesConfig.props'
     
     CLOUD                       = 'cloud'
     MQTT                        = 'mqtt'

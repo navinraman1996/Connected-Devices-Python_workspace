@@ -5,7 +5,7 @@ Created on Jan 24, 2019
 
 import configparser
 import os
-DEFAULT_CONFIG_FILE = "../data/ConnectedDevicesConfig.props"
+DEFAULT_CONFIG_FILE = "../../../data/ConnectedDevicesConfig.props"
 
 '''
 A simple utility wrapper around the built-in Python

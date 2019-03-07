@@ -5,8 +5,8 @@ Created on Feb 17, 2019
 '''
 
 import json
-from labs.common.SensorData import SensorData
-from labs.common.ActuatorData import ActuatorData
+from labs.common.SensorData     import SensorData
+from labs.common.ActuatorData   import ActuatorData
 
 
 class DataUtil(object):
@@ -34,15 +34,13 @@ class DataUtil(object):
 
         #print(" decode [pre] --> " + str(sdDict))
         
-        sd              = SensorData()
+        sd              = SensorData("Temperature Sensor",0.0,30.0)
         sd.name         = sdDict['name']
-        sd.timeStamp    = sdDict['timeStamp']
+        sd.timeStamp    = sdDict['time']
         sd.avgValue     = sdDict['avgValue']
         sd.minValue     = sdDict['minValue']
         sd.maxValue     = sdDict['maxValue']
         sd.curValue     = sdDict['curValue']
-        sd.totValue     = sdDict['totValue']
-        sd.sampleCount  = sdDict['sampleCount']
         
         #print(" decode [post] --> " + str(sd))
         
