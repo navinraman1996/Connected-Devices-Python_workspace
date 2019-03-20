@@ -16,7 +16,7 @@ class SensorData(object):
     curVal              = 0;
     avgVal              = 0;
     minVal              = 0;
-    maxVal              = 25;
+    maxVal              = 30;
     totVal              = 0;
     diffVal             = 0;
     sampleCount         = 0;

@@ -1,0 +1,1 @@
+{"name": "Temperature Sensor", "avgValue": 6.2099485241492705, "maxValue": 30, "minValue": 0, "curValue": 6.2099485241492705, "time": "2019-03-06 21:19:42.734205"}

@@ -12,15 +12,29 @@ class ConfigConst(object):
     
     DEFAULT_CONFIG_FILE_NAME    = '../../../config/ConnectedDevicesConfig.props'
     
+    DEFAULT_HOST                = '127.0.0.1'
+    DEFAULT_COAP_PORT           = 5683
+    DEFAULT_MQTT_PORT           = 1883
+    SECURE_COAP_PORT            = 5684
+    SECURE_MQTT_PORT            = 8883
+    DEFAULT_POLL_CYCLES         = 60
+    
     CLOUD                       = 'cloud'
     MQTT                        = 'mqtt'
     COAP                        = 'coap'
     SMTP                        = 'smtp'
     GATEWAY_DEVICE              = 'gateway'
     CONSTRAINED_DEVICE          = 'device'
+    
     UBIDOTS                     = 'ubidots'
+    AWS                         = 'aws'
+    GCP                         = 'gcp'
+    AZURE                       = 'azure'
     
     UBIDOTS_CLOUD_SECTION       = UBIDOTS + SECTION_SEPARATOR + CLOUD
+    AWS_CLOUD_SECTION           = AWS + SECTION_SEPARATOR + CLOUD
+    GCP_CLOUD_SECTION           = GCP + SECTION_SEPARATOR + CLOUD
+    AZURE_CLOUD_SECTION         = AZURE + SECTION_SEPARATOR + CLOUD
     SMTP_CLOUD_SECTION          = SMTP + SECTION_SEPARATOR + CLOUD
     MQTT_CLOUD_SECTION          = MQTT + SECTION_SEPARATOR + CLOUD
     COAP_CLOUD_SECTION          = COAP + SECTION_SEPARATOR + CLOUD
@@ -56,3 +70,6 @@ class ConfigConst(object):
     KEEP_ALIVE_KEY              = 'keepAlive'
     
     NOMINAL_TEMP                = 'nominalTemp'
+    
+    PATH                        = 'path'
+    METHOD                      = 'method'
