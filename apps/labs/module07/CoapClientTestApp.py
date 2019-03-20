@@ -13,6 +13,10 @@ from labs.common            import ConfigConst
 
 from labs.module07.CoapClientConnector import CoapClientConnector
 
+'''
+This will connect to the CoAP server using CoapClientConnector, 
+run a number of tests, then exit.
+'''
 config = ConfigUtil('../../../config/ConnectedDevicesConfig.props')
 config.loadConfig()
 

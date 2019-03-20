@@ -12,7 +12,7 @@ from labs.module07.TempResourceHandler  import TempResourceHandler
 client = None
 
 '''
-classdocs
+This class is used to connect to the server
 '''
 class CoapServerConnector(CoAP):
     
@@ -22,7 +22,9 @@ class CoapServerConnector(CoAP):
     def __init__(self,host,port,config):
         
         CoAP.__init__(self, (host, port))
-        self.add_resource("temperature/", TempResourceHandler(config = config)) #Add Temperature resource while initializing server
+        
+        #Adding Temperature resource while initializing server
+        self.add_resource("temperature/", TempResourceHandler(config = config)) 
         
     '''
     This function is used to start the server

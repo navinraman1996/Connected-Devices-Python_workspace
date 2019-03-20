@@ -9,6 +9,10 @@ from labs.module07.CoapServerConnector import CoapServerConnector
 from labs.common import ConfigConst
 from labs.common.ConfigUtil import ConfigUtil
 
+'''
+This will create a new instance of CoapServerConnector, which will instance
+the requisite handler(s), and listen for connections.
+'''
 config = ConfigUtil('../data/ConnectedDevicesConfig.props')
 config.loadConfig()
 
